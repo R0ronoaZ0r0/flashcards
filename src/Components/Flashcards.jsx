@@ -8,8 +8,7 @@ const Flashcards = () => {
     // index 0 is title
     const [index, setIndex] = useState(0);
     const [question, setQuestion] = useState(true);
-    const [indexCount, setIndexCount] = useState(0);
-    const [lastTenIndices, setLastTenIndices] = useState([]);
+
 
     const randomIndex = () => {
         // As index 0 is tile, we want to start at index 1
@@ -23,21 +22,10 @@ const Flashcards = () => {
 
 
     const handleNext = () => {
-        console.log(lastTenIndices);
-        setIndexCount(indexCount + 1);
-        if (indexCount === 10) {
-            setIndexCount(0);
-            setLastTenIndices([]);
-        }
-        let newIndex = randomIndex();
-        while (lastTenIndices.includes(newIndex)) {
-            newIndex = randomIndex();
-        }
-        setIndex(newIndex);
-        setQuestion(true);
-        lastTenIndices.push(newIndex)
-        setLastTenIndices(lastTenIndices);
         
+        let newIndex = randomIndex();
+        setIndex(newIndex);
+        setQuestion(true);      
     };
 
     return(
