@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const CardContent = ({index, question}) => {
 
         const content = [
-                {'Test your knowledge with our quiz! Click on the card to reveal the answer. Click next to move on to the next card. Good luck!': 'Click next to start!'},
+                {'Start!': 'Click next to start!'},
                 {'What does JSX stand for?' : 'JSX stands for JavaScript XML.'},
                 {'What is the purpose of the className attribute in JSX?' : 'The className attribute is used to specify the CSS class name(s) for an element in JSX.'},
                 {'What is the purpose of the style attribute in JSX?' : 'The style attribute is used to specify the inline CSS styles for an element in JSX.'},

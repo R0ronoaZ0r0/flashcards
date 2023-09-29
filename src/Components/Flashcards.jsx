@@ -30,10 +30,13 @@ const Flashcards = () => {
 
     return(
         <div>
-            <h1>Flashcards</h1>
+            <h1>Quiz on HTML, CSS and React</h1>
             <p>
-                Quiz on HTML, CSS, and React
+                Test your knowledge with our quiz! 
+                Click on the card to reveal the answer. 
+                Click next to move on to the next card. Good luck!
             </p>
+            <p>Total number of cards displayed is 10</p>
             <div onClick={handleClick} className="flashcard">
                 <CardContent index={index} question={question}/>
             </div>
