@@ -5,10 +5,17 @@ import PropTypes from 'prop-types';
 const CardContent = ({index, question}) => {
 
         const content = [
-
+                {'title': 'Flashcards'},
                 {'question1': 'Answer1'},
                 {'question2': 'Answer2'},
-                {'question3': 'Answer3'}
+                {'question3': 'Answer3'},
+                {'question4': 'Answer4'},
+                {'question5': 'Answer5'},
+                {'question6': 'Answer6'},
+                {'question7': 'Answer7'},
+                {'question8': 'Answer8'},
+                {'question9': 'Answer9'},
+                {'question10': 'Answer10'}
 
         ];
 

@@ -1,11 +1,11 @@
 import './App.css'
-import Flashcard from './Components/Flashcard'
+import Flashcards from './Components/Flashcards'
 
 function App() {
 
   return (
     <div>
-      <Flashcard></Flashcard>
+      <Flashcards/>
     </div>
   )
 }
