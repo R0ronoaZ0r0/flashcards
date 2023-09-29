@@ -31,7 +31,9 @@ const Flashcards = () => {
     return(
         <div>
             <h1>Flashcards</h1>
-            <p>description</p>
+            <p>
+                Quiz on HTML, CSS, and React
+            </p>
             <div onClick={handleClick} className="flashcard">
                 <CardContent index={index} question={question}/>
             </div>

@@ -46,4 +46,7 @@
   border: 1px solid;
   width: 400px;
   height: 400px;
+  margin: 0 auto;
+  padding: 110px;
+  box-sizing: border-box;
 }
