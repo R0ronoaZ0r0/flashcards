@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CardContent from "./CardContent";
+import AnswerForm from "./AnswerForm";
 
 import PropTypes from 'prop-types';
 
@@ -52,21 +53,26 @@ const Flashcards = () => {
         }
     };
 
+    // const getContentArrayFromCardContent = (contentArray) => {
+    //     setContentArray(contentArray);
+    // }
+
 
 
     return(
         <div>
-            <h1>Quiz on HTML, CSS and React</h1>
+            <h1>Quiz on Javascript</h1>
             <p>
                 Test your knowledge with our quiz! 
                 Click on the card to reveal the answer. 
                 Click next to move on to the next card. Good luck!
             </p>
-            <p>Total number of cards displayed is 10</p>
+            <p>Total number of cards displayed is {}</p>
             <div onClick={handleClick} className="flashcard">
-                <CardContent index={index} question={question}/>
+                <CardContent index={index} question={question} />
             </div>
 
+            <AnswerForm/>
             <div className="backNextButtonsContainer">              
                 <button onClick={handleBack} className="back" disabled={backButtonDisabled}> &#8592; </button>
                 <button onClick={handleNext} className="next" disabled={nextButtonDisabled}> &#8594; </button>
