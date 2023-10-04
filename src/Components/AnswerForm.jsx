@@ -1,10 +1,17 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const AnswerForm = () => {
+const AnswerForm = (props) => {
     const [answer, setAnswer] = useState("");
 
-    const handleOnSubmit = () => {
-        
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        if(answer === props.answer) {
+            alert("Correct!");
+        }
+        else {
+            alert("Incorrect!");
+        }
     }
 
     return(
@@ -18,7 +25,7 @@ const AnswerForm = () => {
                         onChange={(e) => setAnswer(e.target.value)}
                     />
                 </label>
-                <input type="submit"/>
+                <button type="submit">submit</button>
             </form>
         </div>
     );
