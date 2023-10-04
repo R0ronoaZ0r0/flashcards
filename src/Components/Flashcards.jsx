@@ -67,7 +67,7 @@ const Flashcards = () => {
                 Click on the card to reveal the answer. 
                 Click next to move on to the next card. Good luck!
             </p>
-            <p>Total number of cards displayed is {}</p>
+            <p>Total number of cards displayed is 10</p>
             <div onClick={handleClick} className="flashcard">
                 <CardContent index={index} question={question} />
             </div>
