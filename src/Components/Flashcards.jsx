@@ -92,7 +92,7 @@ const Flashcards = () => {
                 </div>
             </div>
 
-            <AnswerForm answer={Object.values(content[index])[0]}/>
+            <AnswerForm answer={Object.values(content[index])[0]} isQuestion={question}/>
             <div className="backNextButtonsContainer">              
                 <button onClick={handleBack} className="back" disabled={backButtonDisabled}> &#8592; </button>
                 <button onClick={handleNext} className="next" disabled={nextButtonDisabled}> &#8594; </button>

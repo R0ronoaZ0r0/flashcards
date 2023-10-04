@@ -6,19 +6,22 @@ const AnswerForm = (props) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        if(answer === props.answer) {
-            alert("Correct!");
+        if(props.isQuestion){
+            if(answer === props.answer) {
+                alert("Correct!");
+            }
+            else {
+                alert("Incorrect!");
+            }
         }
-        else {
-            alert("Incorrect!");
-        }
+        
     }
 
     return(
-        <div>
+        <div className="answer-form">
             <form onSubmit={handleOnSubmit}>
                 <label>
-                    Enter your answer:
+                    Enter your answer: 
                     <input 
                         type="text" 
                         value={answer}
