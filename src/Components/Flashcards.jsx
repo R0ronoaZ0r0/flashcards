@@ -10,6 +10,7 @@ const Flashcards = () => {
     const [question, setQuestion] = useState(true);
     const [nextButtonDisabled, setNextButtonDisabled] = useState(false);
     const [backButtonDisabled, setBackButtonDisabled] = useState(true);
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
     let currIndex = index; 
 
@@ -21,6 +22,7 @@ const Flashcards = () => {
 
     const handleClick = () => {
         setQuestion(!question);
+        setIsSubmitDisabled(question ? true : false);
     };
 
     const content = [
@@ -43,7 +45,11 @@ const Flashcards = () => {
         setIndex(index + 1);
         setQuestion(true); 
         currIndex++;   
-        buttonsDisabledHandle(); 
+        buttonsDisabledHandle();
+        if(currIndex>=0 && currIndex<content.length)
+            setIsSubmitDisabled(false);
+        else 
+            setIsSubmitDisabled(true);
     };
 
     const handleBack = () => {
@@ -51,6 +57,10 @@ const Flashcards = () => {
         setQuestion(true);  
         currIndex--; 
         buttonsDisabledHandle(); 
+        if(currIndex>=2 && currIndex<content.length)
+            setIsSubmitDisabled(false);
+        else
+            setIsSubmitDisabled(true);
     };
 
     const buttonsDisabledHandle = () => {
@@ -92,7 +102,11 @@ const Flashcards = () => {
                 </div>
             </div>
 
-            <AnswerForm answer={Object.values(content[index])[0]} isQuestion={question}/>
+            <AnswerForm 
+                answer={Object.values(content[index])[0]} 
+                // isQuestion={question}
+                isSubmitDisabled={isSubmitDisabled}
+            />
             <div className="backNextButtonsContainer">              
                 <button onClick={handleBack} className="back" disabled={backButtonDisabled}> &#8592; </button>
                 <button onClick={handleNext} className="next" disabled={nextButtonDisabled}> &#8594; </button>

@@ -6,14 +6,6 @@ const AnswerForm = (props) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        if(props.isQuestion){
-            if(answer === props.answer) {
-                alert("Correct!");
-            }
-            else {
-                alert("Incorrect!");
-            }
-        }
         
     }
 
@@ -28,7 +20,7 @@ const AnswerForm = (props) => {
                         onChange={(e) => setAnswer(e.target.value)}
                     />
                 </label>
-                <button type="submit">submit</button>
+                <button type="submit" disabled={props.isSubmitDisabled}>submit</button>
             </form>
         </div>
     );
