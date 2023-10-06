@@ -6,7 +6,7 @@ const AnswerForm = (props) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        
+        props.onSubmit(answer);
     }
 
     return(
@@ -18,6 +18,7 @@ const AnswerForm = (props) => {
                         type="text" 
                         value={answer}
                         onChange={(e) => setAnswer(e.target.value)}
+                        style={props.answerCSS}
                     />
                 </label>
                 <button type="submit" disabled={props.isSubmitDisabled}>submit</button>

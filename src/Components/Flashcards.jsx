@@ -11,7 +11,7 @@ const Flashcards = () => {
     const [nextButtonDisabled, setNextButtonDisabled] = useState(false);
     const [backButtonDisabled, setBackButtonDisabled] = useState(true);
     const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
-
+    const [answerCSS, setAnswerCSS] = useState({border: '1px solid white'});
     let currIndex = index; 
 
     // const randomIndex = () => {
@@ -19,6 +19,10 @@ const Flashcards = () => {
     //     // and end at index 10
     //     return Math.floor(Math.random() * 10) + 1;
     // };
+
+    const defaultCSS = {border: '1px solid white'};
+    const correctCSS = {border: '1px solid green'};
+    const incorrectCSS = {border: '1px solid red'};
 
     const handleClick = () => {
         setQuestion(!question);
@@ -50,6 +54,7 @@ const Flashcards = () => {
             setIsSubmitDisabled(false);
         else 
             setIsSubmitDisabled(true);
+        setAnswerCSS(defaultCSS);
     };
 
     const handleBack = () => {
@@ -61,6 +66,7 @@ const Flashcards = () => {
             setIsSubmitDisabled(false);
         else
             setIsSubmitDisabled(true);
+        setAnswerCSS(defaultCSS);
     };
 
     const buttonsDisabledHandle = () => {
@@ -81,7 +87,14 @@ const Flashcards = () => {
     //     setContentArray(contentArray);
     // }
 
-
+    const handleSubmit = (answer) => {
+        if(answer.toLowerCase() === Object.values(content[index])[0].toLowerCase()){
+            setAnswerCSS(correctCSS);
+        }
+        else{
+            setAnswerCSS(incorrectCSS);
+        }
+    };
 
     return(
         <div>
@@ -103,9 +116,11 @@ const Flashcards = () => {
             </div>
 
             <AnswerForm 
-                answer={Object.values(content[index])[0]} 
+                // answer={Object.values(content[index])[0]} 
                 // isQuestion={question}
                 isSubmitDisabled={isSubmitDisabled}
+                onSubmit={handleSubmit}
+                answerCSS={answerCSS}
             />
             <div className="backNextButtonsContainer">              
                 <button onClick={handleBack} className="back" disabled={backButtonDisabled}> &#8592; </button>
